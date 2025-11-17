@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, League_Gothic } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { getAssetPath } from "@/lib/asset-path"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -38,6 +39,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+			<head>
+				<link
+					rel="preload"
+					as="image"
+					href={getAssetPath("/images/demi-header-2.png")}
+					// fetchpriority helps the browser prioritize above-the-fold image
+					// Some browsers only read fetchpriority on <img>, but harmless here
+					fetchpriority="high"
+				/>
+			</head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

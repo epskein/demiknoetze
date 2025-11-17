@@ -7,6 +7,8 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import { PageTransition } from "@/components/page-transition"
 
+export const dynamic = "force-static"
+
 export default function Home() {
   return (
     <PageTransition>

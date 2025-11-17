@@ -3,6 +3,8 @@ import Link from "next/link"
 import { PageTransition } from "@/components/page-transition"
 import { getAssetPath } from "@/lib/asset-path"
 
+export const dynamic = "force-static"
+
 const projectsData = [
   {
     id: 1,

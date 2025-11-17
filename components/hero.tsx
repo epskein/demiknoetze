@@ -8,7 +8,14 @@ export default function Hero() {
           {/* Hero Image - Left side, made larger and extended to align with about section */}
           <div className="flex justify-center md:justify-start -ml-4 md:ml-0">
             <div className="w-full max-w-2xl">
-              <img src={getAssetPath("/images/demi-header-2.png")} alt="Demi Knoetze" className="w-full h-auto object-contain" />
+							<img
+								src={getAssetPath("/images/demi-header-2.png")}
+								alt="Demi Knoetze"
+								className="w-full h-auto object-contain"
+								loading="eager"
+								decoding="async"
+								fetchpriority="high"
+							/>
             </div>
           </div>
 
