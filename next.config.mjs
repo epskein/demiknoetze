@@ -1,8 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/my-v0-project' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/my-v0-project/' : '',
+  // Derive base path from env so it works for any repo name on GitHub Pages
+  // Example: set NEXT_PUBLIC_BASE_PATH=/your-repo-name (with or without leading slash)
+  basePath:
+    process.env.NODE_ENV === 'production'
+      ? (() => {
+          const fromEnv = process.env.NEXT_PUBLIC_BASE_PATH || ''
+          if (!fromEnv) return ''
+          const withLeading = fromEnv.startsWith('/') ? fromEnv : `/${fromEnv}`
+          const withoutTrailing = withLeading.endsWith('/') ? withLeading.slice(0, -1) : withLeading
+          return withoutTrailing
+        })()
+      : '',
+  assetPrefix:
+    process.env.NODE_ENV === 'production'
+      ? (() => {
+          const fromEnv = process.env.NEXT_PUBLIC_BASE_PATH || ''
+          if (!fromEnv) return ''
+          const withLeading = fromEnv.startsWith('/') ? fromEnv : `/${fromEnv}`
+          const withTrailing = withLeading.endsWith('/') ? withLeading : `${withLeading}/`
+          return withTrailing
+        })()
+      : '',
   typescript: {
     ignoreBuildErrors: true,
   },
