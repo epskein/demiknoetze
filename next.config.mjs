@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/my-v0-project' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/my-v0-project/' : '',
   typescript: {
     ignoreBuildErrors: true,
   },
