@@ -1,7 +1,13 @@
+"use client"
+
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+
 export default function AboutMe() {
+  const { elementRef, isVisible } = useScrollAnimation()
+
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div ref={elementRef} className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         {/* About Me Heading Image, made much larger */}
         <div className="mb-20 flex justify-start">
           <img src="/images/about-me.png" alt="about me" className="h-40 object-contain" />

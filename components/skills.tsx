@@ -1,4 +1,10 @@
+"use client"
+
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+
 export default function Skills() {
+  const { elementRef, isVisible } = useScrollAnimation()
+
   const skillsData = [
     {
       category: "SOFTWARE",
@@ -45,7 +51,7 @@ export default function Skills() {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-white">
-      <div className="max-w-7xl mx-auto">
+      <div ref={elementRef} className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <h2 className="font-heading text-5xl md:text-6xl tracking-tight mb-20 uppercase">Skills & Expertise</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">

@@ -1,7 +1,13 @@
+"use client"
+
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+
 export default function Contact() {
+  const { elementRef, isVisible } = useScrollAnimation()
+
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-white">
-      <div className="max-w-2xl mx-auto">
+      <div ref={elementRef} className={`max-w-2xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <h2 className="font-heading text-5xl md:text-6xl tracking-tight mb-12 text-center uppercase">Let's Connect</h2>
 
         <div className="space-y-12">
@@ -24,7 +30,7 @@ export default function Contact() {
             <div className="space-y-3 text-center">
               <h3 className="text-sm font-bold uppercase tracking-widest mb-4">Instagram</h3>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/demiknoetze"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg hover:opacity-80 transition-opacity"

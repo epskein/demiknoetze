@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from "next/link"
+import { PageTransition } from "@/components/page-transition"
 
 const projectsData = [
   {
@@ -110,6 +111,12 @@ interface PageProps {
   params: Promise<{ id: string }>
 }
 
+export const generateStaticParams = () => {
+  return projectsData.map((project) => ({
+    id: project.id.toString(),
+  }))
+}
+
 export default async function ProjectPage({ params }: PageProps) {
   const { id } = await params
   const project = projectsData.find((p) => p.id === Number.parseInt(id))
@@ -119,101 +126,103 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-white text-gray-900 pt-20">
-      {/* Back Button */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link
-          href="/#projects"
-          className="text-sm text-primary font-bold hover:opacity-80 transition-opacity flex items-center gap-2"
-        >
-          ← Back to projects
-        </Link>
-      </div>
-
-      {/* Project Header */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="space-y-6 mb-12">
-          <div>
-            <p className="text-sm text-primary font-bold uppercase tracking-widest mb-2">Project</p>
-            <h1 className="font-heading text-5xl md:text-6xl tracking-tight uppercase">{project.name}</h1>
-          </div>
-          <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">{project.tagline}</p>
-        </div>
-
-        {/* Main Project Image */}
-        <div className="rounded-lg overflow-hidden bg-gray-200 aspect-video mb-16">
-          <img src={project.image || "/placeholder.svg"} alt={project.name} className="w-full h-full object-cover" />
-        </div>
-      </section>
-
-      {/* Project Description */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="md:col-span-2 space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Overview</h2>
-              <p className="text-gray-700 leading-relaxed">{project.description}</p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold">Project Details</h2>
-              {project.fullDescription.map((paragraph, index) => (
-                <p key={index} className="text-gray-700 leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          {/* Sidebar Info */}
-          <div className="space-y-8">
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Project Type</h3>
-              <p className="text-gray-700">Brand Development</p>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Services</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>Visual Identity</li>
-                <li>Creative Direction</li>
-                <li>Content Creation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-200">
-        <h2 className="text-2xl font-bold mb-8">Project Gallery</h2>
-        <div className="flex flex-col gap-8">
-          {project.gallery.map((image, index) => (
-            <div key={index} className="rounded-lg overflow-hidden bg-gray-200">
-              <img
-                src={image || "/placeholder.svg"}
-                alt={`${project.name} gallery ${index + 1}`}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-200">
-        <div className="text-center space-y-6">
-          <h2 className="text-3xl font-bold">Interested in working together?</h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Let's create something amazing. Get in touch to discuss your next project.
-          </p>
+    <PageTransition>
+      <main className="min-h-screen bg-white text-gray-900 pt-20">
+        {/* Back Button */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Link
-            href="/#contact"
-            className="inline-block px-8 py-3 bg-primary text-white rounded-full text-sm font-bold hover:opacity-90 transition-opacity"
+            href="/#projects"
+            className="text-sm text-primary font-bold hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            Get in touch
+            ← Back to projects
           </Link>
         </div>
-      </section>
-    </main>
+
+        {/* Project Header */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="space-y-6 mb-12">
+            <div>
+              <p className="text-sm text-primary font-bold uppercase tracking-widest mb-2">Project</p>
+              <h1 className="font-heading text-5xl md:text-6xl tracking-tight uppercase">{project.name}</h1>
+            </div>
+            <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">{project.tagline}</p>
+          </div>
+
+          {/* Main Project Image */}
+          <div className="rounded-lg overflow-hidden bg-gray-200 aspect-video mb-16">
+            <img src={project.image || "/placeholder.svg"} alt={project.name} className="w-full h-full object-cover" />
+          </div>
+        </section>
+
+        {/* Project Description */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="md:col-span-2 space-y-6">
+              <div>
+                <h2 className="text-2xl font-bold mb-4">Overview</h2>
+                <p className="text-gray-700 leading-relaxed">{project.description}</p>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-2xl font-bold">Project Details</h2>
+                {project.fullDescription.map((paragraph, index) => (
+                  <p key={index} className="text-gray-700 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            {/* Sidebar Info */}
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Project Type</h3>
+                <p className="text-gray-700">Brand Development</p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Services</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>Visual Identity</li>
+                  <li>Creative Direction</li>
+                  <li>Content Creation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-200">
+          <h2 className="text-2xl font-bold mb-8">Project Gallery</h2>
+          <div className="flex flex-col gap-8">
+            {project.gallery.map((image, index) => (
+              <div key={index} className="rounded-lg overflow-hidden bg-gray-200">
+                <img
+                  src={image || "/placeholder.svg"}
+                  alt={`${project.name} gallery ${index + 1}`}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-200">
+          <div className="text-center space-y-6">
+            <h2 className="text-3xl font-bold">Interested in working together?</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Let's create something amazing. Get in touch to discuss your next project.
+            </p>
+            <Link
+              href="/#contact"
+              className="inline-block px-8 py-3 bg-primary text-white rounded-full text-sm font-bold hover:opacity-90 transition-opacity"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </section>
+      </main>
+    </PageTransition>
   )
 }

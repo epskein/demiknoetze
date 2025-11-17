@@ -6,14 +6,14 @@ export default function Footer() {
           <p className="text-sm font-medium">© {new Date().getFullYear()} Demi Knoetze. All rights reserved.</p>
           <div className="flex gap-6">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/demiknoetze"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium hover:opacity-80 transition-opacity"
             >
               Instagram
             </a>
-            <a href="mailto:hello@example.com" className="text-sm font-medium hover:opacity-80 transition-opacity">
+            <a href="mailto:demiknoetze2002@gmail.com" className="text-sm font-medium hover:opacity-80 transition-opacity">
               Email
             </a>
           </div>
