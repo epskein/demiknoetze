@@ -30,11 +30,10 @@ const projectsData = [
       "The brand identity blends hand-drawn charm with minimalist design principles. Earth tones, organic typography, and playful illustrations create a visual language that feels both modern and nostalgic.",
       "By supporting local animal shelters, Mzansi Blend transforms a simple coffee purchase into an act of kindness. The campaign resonates with socially conscious consumers who want their spending to matter.",
     ],
-    image: "/coffee-shop-cafe-branding.jpg",
+    image: "/images/mzansi-main.jpg",
     gallery: [
-      "/coffee-shop-cafe-branding.jpg",
-      "/water-bottle-wellness-brand.jpg",
-      "/snack-food-campaign-girl-dinner.jpg",
+      "/images/mzansi-1.jpg",
+      "/images/mzansi-2.jpg",
     ],
   },
   {
@@ -48,11 +47,10 @@ const projectsData = [
       "The brand identity is built on three pillars: purity, adventure, and balance. Crisp blues, clean whites, and fresh greens create a visual palette that inspires movement and mindfulness.",
       "From product design to social content, every touchpoint reinforces the message of wellness and sustainability. The brand speaks to individuals who see hydration as part of a holistic lifestyle.",
     ],
-    image: "/water-bottle-wellness-brand.jpg",
+    image: "/images/owell-main.jpg",
     gallery: [
-      "/water-bottle-wellness-brand.jpg",
-      "/stationery-store-creative-workspace.jpg",
-      "/candy-sweets-nostalgic-retro.jpg",
+      "/images/owell-1.jpg",
+      "/images/owell-2.jpg",
     ],
   },
   {
@@ -66,11 +64,10 @@ const projectsData = [
       "Creative direction focused on capturing intimate, relatable moments. Warm lighting, candid laughter, and Pinterest-inspired aesthetics create an aspirational yet achievable vibe that resonates with young women.",
       "Through strategic content creation and consistent visual styling across platforms, the campaign positioned Trigz as more than a snack brand—it became a cultural moment. Social rollout included photos, videos, and interactive content that sparked engagement and connection.",
     ],
-    image: "/snack-food-campaign-girl-dinner.jpg",
+    image: "/images/trigs-main.jpg",
     gallery: [
-      "/snack-food-campaign-girl-dinner.jpg",
-      "/stationery-store-creative-workspace.jpg",
-      "/candy-sweets-nostalgic-retro.jpg",
+      "/images/trigs-1.jpg",
+      "/images/trigs-2.jpg",
     ],
   },
   {
@@ -84,11 +81,10 @@ const projectsData = [
       "The visual identity is vibrant, playful, and distinctly creative. Bubbly typography, soft gradients, and retro-inspired colors create a cheerful aesthetic that makes every customer feel part of an artistic movement.",
       "From product design to workspace branding, every element reflects the core mission: to empower creatives and foster a community where ideas flourish. The brand celebrates creativity in all its forms.",
     ],
-    image: "/stationery-store-creative-workspace.jpg",
+    image: "/images/creators-main.jpg",
     gallery: [
-      "/stationery-store-creative-workspace.jpg",
-      "/sustainable-swimwear-coastal-brand.jpg",
-      "/coffee-shop-cafe-branding.jpg",
+      "/images/creators-1.jpg",
+      "/images/creators-2.jpg",
     ],
   },
   {
@@ -102,11 +98,10 @@ const projectsData = [
       "The visual identity is vibrant, playful, and unapologetically joyful. A dominant pink color palette, retro typography, and playful illustrations create an Instagram-worthy aesthetic that appeals to both millennials and Gen Z.",
       "Every packaging and content piece celebrates the joy of sweets and the memories they evoke. The brand succeeds by being both nostalgic and contemporary, honoring the past while speaking to modern consumers.",
     ],
-    image: "/candy-sweets-nostalgic-retro.jpg",
+    image: "/images/yummy-main.jpg",
     gallery: [
-      "/candy-sweets-nostalgic-retro.jpg",
-      "/water-bottle-wellness-brand.jpg",
-      "/snack-food-campaign-girl-dinner.jpg",
+      "/images/yummy-1.jpg",
+      "/images/yummy-2.jpg",
     ],
   },
 ]

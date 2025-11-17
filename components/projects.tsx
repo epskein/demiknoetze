@@ -12,31 +12,31 @@ export default function Projects() {
       id: 2,
       name: "Mzansi Blend",
       description: "Locally inspired café concept with warmth and purpose.",
-      image: "/coffee-shop-cafe-branding.jpg",
+      image: "/images/mzansi-main.jpg",
     },
     {
       id: 3,
       name: "O'Well Water",
       description: "Lifestyle hydration brand merging wellness and sustainability.",
-      image: "/water-bottle-wellness-brand.jpg",
+      image: "/images/owell-main.jpg",
     },
     {
       id: 4,
       name: "Trigz Girl Dinner",
       description: "Playful campaign inspired by viral Girl Dinner movement.",
-      image: "/snack-food-campaign-girl-dinner.jpg",
+      image: "/images/trigs-main.jpg",
     },
     {
       id: 5,
       name: "Creators' Corner",
       description: "Creative stationery store and collaborative workspace.",
-      image: "/stationery-store-creative-workspace.jpg",
+      image: "/images/creators-main.jpg",
     },
     {
       id: 6,
       name: "YUMMEEE! Sweets",
       description: "Nostalgic candy brand celebrating discontinued sweets.",
-      image: "/candy-sweets-nostalgic-retro.jpg",
+      image: "/images/yummy-main.jpg",
     },
   ]
 

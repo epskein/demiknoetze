@@ -10,14 +10,14 @@ export default function Contact() {
             <div className="space-y-3 text-center">
               <h3 className="text-sm font-bold uppercase tracking-widest mb-4">Phone</h3>
               <a href="tel:+27123456789" className="text-lg hover:opacity-80 transition-opacity">
-                +27 (123) 456-789
+                +27 76 764 3501
               </a>
             </div>
 
             <div className="space-y-3 text-center">
               <h3 className="text-sm font-bold uppercase tracking-widest mb-4">Email</h3>
               <a href="mailto:hello@example.com" className="text-lg hover:opacity-80 transition-opacity">
-                hello@example.com
+                demiknoetze2002@gmail.com
               </a>
             </div>
 
@@ -29,7 +29,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="text-lg hover:opacity-80 transition-opacity"
               >
-                @yourinstagram
+                @demiknoetze
               </a>
             </div>
           </div>
