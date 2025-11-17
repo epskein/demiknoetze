@@ -1,3 +1,5 @@
+import { getAssetPath } from "@/lib/asset-path"
+
 export default function Hero() {
   return (
     <section id="home" className="pt-24 pb-0 px-4 sm:px-6 lg:px-8 bg-primary text-white overflow-hidden">
@@ -6,7 +8,7 @@ export default function Hero() {
           {/* Hero Image - Left side, made larger and extended to align with about section */}
           <div className="flex justify-center md:justify-start -ml-4 md:ml-0">
             <div className="w-full max-w-2xl">
-              <img src="/images/demi-header-2.png" alt="Demi Knoetze" className="w-full h-auto object-contain" />
+              <img src={getAssetPath("/images/demi-header-2.png")} alt="Demi Knoetze" className="w-full h-auto object-contain" />
             </div>
           </div>
 

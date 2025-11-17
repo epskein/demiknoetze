@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from "next/link"
 import { PageTransition } from "@/components/page-transition"
+import { getAssetPath } from "@/lib/asset-path"
 
 const projectsData = [
   {
@@ -150,7 +151,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* Main Project Image */}
           <div className="rounded-lg overflow-hidden bg-gray-200 aspect-video mb-16">
-            <img src={project.image || "/placeholder.svg"} alt={project.name} className="w-full h-full object-cover" />
+            <img src={getAssetPath(project.image || "/placeholder.svg")} alt={project.name} className="w-full h-full object-cover" />
           </div>
         </section>
 
@@ -198,7 +199,7 @@ export default async function ProjectPage({ params }: PageProps) {
             {project.gallery.map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden bg-gray-200">
                 <img
-                  src={image || "/placeholder.svg"}
+                  src={getAssetPath(image || "/placeholder.svg")}
                   alt={`${project.name} gallery ${index + 1}`}
                   className="w-full h-auto object-cover"
                 />

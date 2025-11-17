@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { getAssetPath } from "@/lib/asset-path"
 
 interface Project {
   id: number
@@ -12,7 +13,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="group space-y-4 cursor-pointer">
       <div className="relative overflow-hidden rounded-lg bg-gray-200">
         <img
-          src={project.image || "/placeholder.svg"}
+          src={getAssetPath(project.image || "/placeholder.svg")}
           alt={project.name}
           className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
         />

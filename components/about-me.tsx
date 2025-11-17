@@ -1,6 +1,7 @@
 "use client"
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { getAssetPath } from "@/lib/asset-path"
 
 export default function AboutMe() {
   const { elementRef, isVisible } = useScrollAnimation()
@@ -10,7 +11,7 @@ export default function AboutMe() {
       <div ref={elementRef} className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         {/* About Me Heading Image, made much larger */}
         <div className="mb-20 flex justify-start">
-          <img src="/images/about-me.png" alt="about me" className="h-40 object-contain" />
+          <img src={getAssetPath("/images/about-me.png")} alt="about me" className="h-40 object-contain" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
@@ -44,7 +45,7 @@ export default function AboutMe() {
 
       <div className="absolute right-0 top-48 h-full flex items-start pointer-events-none">
         <img
-          src="/images/demi-header.png"
+          src={getAssetPath("/images/demi-header.png")}
           alt="Demi Knoetze"
           className="w-auto object-contain pointer-events-auto h-[900px]"
         />
