@@ -13,16 +13,6 @@ const nextConfig = {
           return withoutTrailing
         })()
       : '',
-  assetPrefix:
-    process.env.NODE_ENV === 'production'
-      ? (() => {
-          const fromEnv = process.env.NEXT_PUBLIC_BASE_PATH || ''
-          if (!fromEnv) return ''
-          const withLeading = fromEnv.startsWith('/') ? fromEnv : `/${fromEnv}`
-          const withTrailing = withLeading.endsWith('/') ? withLeading : `${withLeading}/`
-          return withTrailing
-        })()
-      : '',
   typescript: {
     ignoreBuildErrors: true,
   },
