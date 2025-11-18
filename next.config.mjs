@@ -8,6 +8,10 @@ const nextConfig = {
       ? (() => {
           // Preserve empty string (user site/custom domain) if explicitly provided
           const envVal = process.env.NEXT_PUBLIC_BASE_PATH
+          // On Netlify builds, default to root (no base path)
+          if (typeof envVal !== 'string' && process.env.NETLIFY === 'true') {
+            return ''
+          }
           const fromEnv = typeof envVal === 'string' ? envVal : 'demiknoetze'
           if (fromEnv === '') return ''
           const withLeading = fromEnv.startsWith('/') ? fromEnv : `/${fromEnv}`
