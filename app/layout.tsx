@@ -16,19 +16,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+				url: getAssetPath("/icon-light-32x32.png"),
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+				url: getAssetPath("/icon-dark-32x32.png"),
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+				url: getAssetPath("/icon.svg"),
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+		apple: getAssetPath("/apple-icon.png"),
   },
 }
 
@@ -40,6 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
 			<head>
+				<meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+				<meta httpEquiv="Pragma" content="no-cache" />
+				<meta httpEquiv="Expires" content="0" />
 				<link
 					rel="preload"
 					as="image"
