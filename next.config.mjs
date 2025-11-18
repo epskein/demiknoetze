@@ -6,8 +6,10 @@ const nextConfig = {
   basePath:
     process.env.NODE_ENV === 'production'
       ? (() => {
-          const fromEnv = process.env.NEXT_PUBLIC_BASE_PATH || ''
-          if (!fromEnv) return ''
+          // Preserve empty string (user site/custom domain) if explicitly provided
+          const envVal = process.env.NEXT_PUBLIC_BASE_PATH
+          const fromEnv = typeof envVal === 'string' ? envVal : 'demiknoetze'
+          if (fromEnv === '') return ''
           const withLeading = fromEnv.startsWith('/') ? fromEnv : `/${fromEnv}`
           const withoutTrailing = withLeading.endsWith('/') ? withLeading.slice(0, -1) : withLeading
           return withoutTrailing

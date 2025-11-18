@@ -5,10 +5,14 @@
  */
 export const getAssetPath = (path: string): string => {
   const rawBase =
-    process.env.NODE_ENV === 'production' ? (process.env.NEXT_PUBLIC_BASE_PATH || '') : ''
+    process.env.NODE_ENV === 'production' ? (() => {
+      // Preserve empty string (user site/custom domain) if explicitly provided
+      const envVal = process.env.NEXT_PUBLIC_BASE_PATH
+      return typeof envVal === 'string' ? envVal : 'demiknoetze'
+    })() : ''
 
   const basePath = (() => {
-    if (!rawBase) return ''
+    if (rawBase === '') return ''
     const withLeading = rawBase.startsWith('/') ? rawBase : `/${rawBase}`
     const withoutTrailing = withLeading.endsWith('/') ? withLeading.slice(0, -1) : withLeading
     return withoutTrailing
