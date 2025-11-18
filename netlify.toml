@@ -1,0 +1,16 @@
+[build]
+  command = "npm ci --legacy-peer-deps && npm run build"
+  publish = "out"
+
+[build.environment]
+  # Netlify serves at the domain root, so use an empty base path
+  NEXT_PUBLIC_BASE_PATH = ""
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Avoid stale HTML/CSS during rapid iterations
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+
